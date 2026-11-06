@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Rust build artifacts
+target/
+**/*.rs.bk
+
+# Frontend & Server build outputs
+dist/
+build/
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE and OS files
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

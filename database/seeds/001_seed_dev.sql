@@ -1,0 +1,78 @@
+-- FORTRESS: Realistic Dev Seed Data
+
+BEGIN;
+
+TRUNCATE TABLE security_events, proposals, guardians, wallets RESTART IDENTITY CASCADE;
+
+-- Insert Wallet
+INSERT INTO wallets (
+    contract_id,
+    owner_address,
+    threshold,
+    guardian_count,
+    per_tx_limit,
+    daily_limit,
+    recovery_timelock
+)
+VALUES (
+    'CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE',
+    'GAOWNER111111111111111111111111111111111111111111111111111',
+    2,
+    3,
+    500.0000000,
+    1500.0000000,
+    3600
+);
+
+-- Insert Guardians
+INSERT INTO guardians (wallet_contract_id, guardian_address, alias_label, is_active)
+VALUES
+('CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE', 'GAGUARDIAN11111111111111111111111111111111111111111111111111', 'Cold Vault Hardware Key', true),
+('CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE', 'GAGUARDIAN22222222222222222222222222222222222222222222222222', 'Trusted Advisor (Family)', true),
+('CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE', 'GAGUARDIAN33333333333333333333333333333333333333333333333333', 'Security Sentinel Node', true);
+
+-- Insert Active Proposal
+INSERT INTO proposals (
+    on_chain_proposal_id,
+    wallet_contract_id,
+    proposer,
+    proposed_owner,
+    approvals,
+    status,
+    timelock_until,
+    expires_at,
+    tx_hash
+)
+VALUES (
+    1,
+    'CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE',
+    'GAGUARDIAN11111111111111111111111111111111111111111111111111',
+    'GARECOVERY99999999999999999999999999999999999999999999999999',
+    ARRAY['GAGUARDIAN11111111111111111111111111111111111111111111111111'],
+    'Pending',
+    0,
+    EXTRACT(EPOCH FROM NOW() + INTERVAL '7 days')::BIGINT,
+    '4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b'
+);
+
+-- Insert Security Events
+INSERT INTO security_events (wallet_contract_id, event_type, actor, tx_hash, ledger_sequence, details)
+VALUES
+(
+    'CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE',
+    'initialized',
+    'GAOWNER111111111111111111111111111111111111111111111111111',
+    '1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b',
+    5129401,
+    '{"threshold": 2, "guardians_count": 3, "per_tx_limit": 500, "daily_limit": 1500}'::jsonb
+),
+(
+    'CC5J3P7BFORTRESS6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6R6SECURE',
+    'recovery_proposed',
+    'GAGUARDIAN11111111111111111111111111111111111111111111111111',
+    '4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b',
+    5130105,
+    '{"proposal_id": 1, "proposed_owner": "GARECOVERY99999999999999999999999999999999999999999999999999"}'::jsonb
+);
+
+COMMIT;

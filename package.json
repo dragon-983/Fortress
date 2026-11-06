@@ -1,0 +1,17 @@
+{
+  "name": "fortress-root",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "npm run build -w server && npm run build -w client",
+    "test": "npm test -w server && npm test -w client",
+    "test:contract": "cd contracts/fortress && cargo test",
+    "build:contract": "cd contracts/fortress && cargo build --target wasm32-unknown-unknown --release"
+  }
+}
