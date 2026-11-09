@@ -74,3 +74,4 @@ pub fn emit_timelock_updated(env: &Env, new_timelock: u64) {
     let topics = (Symbol::new(env, "timelock_updated"),);
     env.events().publish(topics, new_timelock);
 }
+

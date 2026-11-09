@@ -75,3 +75,4 @@ CREATE INDEX IF NOT EXISTS idx_guardians_wallet ON guardians(wallet_contract_id)
 CREATE INDEX IF NOT EXISTS idx_proposals_wallet ON proposals(wallet_contract_id);
 CREATE INDEX IF NOT EXISTS idx_events_wallet ON security_events(wallet_contract_id);
 CREATE INDEX IF NOT EXISTS idx_events_created ON security_events(created_at DESC);
+

@@ -6,3 +6,4 @@ app.listen(config.port, () => {
   console.log(`🌐 Stellar Network: ${config.stellar.network} (${config.stellar.rpcUrl})`);
   console.log(`📜 Smart Account Contract: ${config.stellar.contractId}`);
 });
+

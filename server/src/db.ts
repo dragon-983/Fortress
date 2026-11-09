@@ -28,3 +28,4 @@ export async function query<T extends pg.QueryResultRow = any>(
     client.release();
   }
 }
+

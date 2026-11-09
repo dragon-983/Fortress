@@ -351,3 +351,4 @@ export const SpendingControlsView: React.FC<SpendingControlsViewProps> = ({
     </div>
   );
 };
+

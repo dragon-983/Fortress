@@ -222,3 +222,4 @@ All events are emitted via `env.events().publish(...)` under structured topics t
 | `("FORTRESS", Symbol::new(&env, "exec_rec"))` | `(proposal_id, new_owner)` | Recovery executed; ownership migrated |
 | `("FORTRESS", Symbol::new(&env, "transfer"))` | `(token, to, amount)` | Spending executed under limits |
 | `("FORTRESS", Symbol::new(&env, "limits"))` | `(per_tx, daily)` | Spending limits reconfigured |
+

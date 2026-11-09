@@ -27,3 +27,4 @@ export const config = {
   },
   corsOrigin: process.env.CORS_ORIGIN || '*',
 };
+

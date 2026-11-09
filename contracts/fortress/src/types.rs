@@ -78,3 +78,4 @@ pub enum DataKey {
     ProposalCounter,
     Proposal(u64),
 }
+

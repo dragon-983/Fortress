@@ -322,3 +322,4 @@ recoveryRouter.post('/proposals/:id/execute', requireAuth, async (req: Request, 
     res.status(500).json({ error: err.message || 'Failed to execute recovery' });
   }
 });
+

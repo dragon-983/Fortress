@@ -88,3 +88,4 @@ export function formatAmount(amount: number | string | null | undefined, decimal
     maximumFractionDigits: decimals,
   }).format(n);
 }
+

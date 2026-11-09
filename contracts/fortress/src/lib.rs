@@ -572,3 +572,4 @@ impl FortressContract {
         Ok(())
     }
 }
+

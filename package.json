@@ -7,11 +7,15 @@
     "client",
     "server"
   ],
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2"
+  },
   "scripts": {
-    "dev": "node scripts/dev.js",
-    "build": "npm run build -w server && npm run build -w client",
+    "dev": "node init && node scripts/dev.js",
+    "build": "node init && npm run build -w server && npm run build -w client",
     "test": "npm test -w server && npm test -w client",
     "test:contract": "cd contracts/fortress && cargo test",
-    "build:contract": "cd contracts/fortress && cargo build --target wasm32-unknown-unknown --release"
+    "build:contract": "node init && cd contracts/fortress && cargo build --target wasm32-unknown-unknown --release"
   }
 }

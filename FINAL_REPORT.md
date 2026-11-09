@@ -221,3 +221,4 @@ Before deploying FORTRESS to the public Stellar Testnet or mainnet, the followin
    - Human must verify and sign off on the designated guardian public keys (`G...`) and initial spending limits before invoking `stellar contract deploy` and `initialize`.
 5. **Production Environment Variable Configuration**:
    - Confirmation of production `.env` parameters (`FORTRESS_CONTRACT_ID`, RPC endpoints, database credentials) prior to hosting deployment.
+

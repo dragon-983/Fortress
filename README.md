@@ -1,10 +1,5 @@
 # FORTRESS — Programmable Security Wallet on Stellar
 
-<div align="center">
-  <h3>Your Wallet. Your Rules. Your Protection.</h3>
-  <p><strong>A production-grade programmable smart account wallet on Stellar powered by Soroban smart contracts.</strong></p>
-</div>
-
 ---
 
 ## 🛡️ Overview
@@ -203,3 +198,4 @@ FORTRESS/
 ## 📜 License & Compliance
 
 MIT License. Built strictly for Stellar Testnet deployment and research. No real funds or Mainnet private keys are included in this repository.
+
