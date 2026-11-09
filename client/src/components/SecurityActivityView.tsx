@@ -202,3 +202,4 @@ export const SecurityActivityView: React.FC = () => {
     </div>
   );
 };
+

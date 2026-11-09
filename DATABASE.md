@@ -160,3 +160,4 @@ CREATE INDEX idx_security_events_type ON security_events(event_type);
 
 - **Migration**: `database/migrations/001_initial_schema.sql` (Creates tables, foreign keys, and indexes).
 - **Seed Data**: `database/seeds/001_seed_dev.sql` (Provides preconfigured smart account, 3 guardians, pending recovery proposal, and sample audit trail events).
+

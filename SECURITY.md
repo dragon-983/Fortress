@@ -98,3 +98,4 @@ All threat mitigations are backed by automated tests in `contracts/fortress/src/
 | `test_social_recovery_cancelled_by_owner` | Owner veto during timelock | Verified Cancelled |
 | `test_spending_controls_and_daily_limit_reset` | Per-tx overflow, daily overflow, 24h reset | Verified Limits & Reset |
 | `test_set_threshold` | Threshold > guardian count | Verified Revert |
+

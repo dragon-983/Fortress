@@ -386,3 +386,4 @@ fn test_update_spending_limits_and_timelock() {
     client.update_recovery_timelock(&owner, &7200);
     assert_eq!(client.get_security_config().recovery_timelock, 7200);
 }
+
