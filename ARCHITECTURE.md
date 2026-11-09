@@ -186,3 +186,4 @@ The backend indexer continuously reconciles PostgreSQL with the Soroban RPC ledg
    - Synchronizes `guardians` table active states.
    - Updates `proposals` approval arrays and execution statuses.
    - Appends append-only records to `security_events` with transaction hashes and ledger numbers.
+

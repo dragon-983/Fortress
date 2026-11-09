@@ -144,3 +144,4 @@ Once deployed, update the off-chain environment configuration to point to your l
    ```bash
    npm run dev
    ```
+
